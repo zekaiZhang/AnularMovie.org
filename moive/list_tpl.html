@@ -1,0 +1,32 @@
+
+<div style="text-align: center;" ng-show="isLoading">
+    <img src="loading.gif" alt="" style="width: 200px;height: 200px">
+</div>
+
+<div class="content_list" ng-hide="isLoading">
+
+    <h1 ng-bind="res.title"></h1>
+    <div class="list">
+        <a href="#" ng-repeat="movie in  res.subjects">
+            <dl>
+                <dt><img ng-src="{{movie.images.small}}" alt=""></dt>
+                <dd>
+                    <h4 ng-bind="movie.title"></h4>
+                    <p>类型: {{movie.genres}}</p>
+                    <p>导演: <span class="directors" ng-repeat="dir in movie.directors">{{dir.name}}</span></p>
+                    <p>主演: 本.阿弗莱喜克</p>
+                </dd>
+                <span class="score">42分</span>
+            </dl>
+        </a>
+
+
+
+    </div>
+
+    <div class="page">
+        <a href="#">上一页</a>
+        <a href="#">下一页</a>
+    </div>
+
+</div>
